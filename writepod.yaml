@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: writepod 
+spec:
+  containers:
+  - name: busybox
+    image: busybox:1.28
+    command:
+      - /inside_container_folder/run.sh
+
+    volumeMounts: 
+      - mountPath: /inside_container_folder
+        name: data-volume-name
+
+  volumes:
+     - name: data-volume-name
+       persistentVolumeClaim:
+          claimName: nfsclaim 
