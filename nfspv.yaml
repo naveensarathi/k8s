@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 192.168.7.201 
+    server: 192.168.7.200 
     path: "/mnt/PROD_DS01/k8s"
